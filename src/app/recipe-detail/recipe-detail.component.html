@@ -1,0 +1,28 @@
+<div class="row"  >
+  <div class="col-md-10" *ngIf="gcs">
+    <div class="thumbnail">
+
+      <img [src]="imageBlobUrl"height="40%" width="40%" style="width:100%">
+
+      <p> titre: {{gcs.title}} </p>
+
+      <p> pays: {{gcs.country}} </p>
+      <p> nombre de personne : {{gcs.nbPerson}} </p>
+      <p> durée de préparation {{gcs.prepDuration}} </p>
+      <p> difficulté : {{gcs.difficulty}} </p>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+<div *ngFor="let step of steps">
+  <p>Etape :{{step.id}}</p>
+  <div *ngFor="let item of ins">
+    <p>instruction : {{item.id}}</p>
+    <p> description: {{item.description}} </p>
+    <p> quantity :{{item.quantity}}</p>
+  </div>
+</div>

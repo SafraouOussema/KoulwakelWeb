@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PictureService {
-  public API = '//41.226.28.96:8090/application';
+  public API = 'http://41.226.28.96:8090/application';
   public ingid_API = this.API + '/pictures/';
 
 

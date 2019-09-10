@@ -1,13 +1,1041 @@
-<div *ngIf="info.token; else loggedOut">
+<!--<div *ngIf="info.token; else loggedOut">
   <h5 class="text-primary">Your Information</h5>
   <p>
     <strong>Username:</strong> {{info.username}}<br/>
     <strong>Roles:</strong> {{info.authorities}}<br />
     <strong>Token:</strong> {{info.token}}.
   </p>
+
   <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>
 
 <ng-template #loggedOut>
   Please login.
 </ng-template>
+-->
+
+
+<link rel='stylesheet' id='recipe-bootstrap-group-css' href='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-recipe-bootstrap-d560538de7dbfb6a6fca962d032e6a38.css' type='text/css' media='all' />
+
+
+<script src="https://kit.fontawesome.com/yourcode.js"></script>
+
+<style type="text/css">
+  img.wp-smiley,
+  img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+</style>
+<style id='recipe-style-inline-css' type='text/css'>
+  /* HEADER */
+  .top-bar{
+    background: #333333;
+  }
+
+  .account-action .btn{
+    color: #ffffff}
+
+  .account-action .btn:hover{
+    background: transparent;
+    color: #ffffff}
+
+  /* NAVIGATION */
+  .nav.navbar-nav li a{
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+  }
+
+  .nav.navbar-nav > li li{
+    border-color: #eeeeee;
+  }
+
+  .navigation-bar{
+    background: #ffffff;
+  }
+
+  .nav.navbar-nav li a{
+    color: #676767;
+  }
+
+  .navbar-toggle,
+  #navigation .nav.navbar-nav li.open > a,
+  #navigation .nav.navbar-nav li > a:hover,
+  #navigation .nav.navbar-nav li > a:focus ,
+  #navigation .nav.navbar-nav li > a:active,
+  #navigation .nav.navbar-nav li.current > a,
+  #navigation .navbar-nav li.current-menu-parent > a,
+  #navigation .navbar-nav li.current-menu-ancestor > a,
+  #navigation .navbar-nav > li.current-menu-item  > a{
+    color: #6ba72b;
+    background: #ffffff;
+  }
+
+  .nav.navbar-nav li li a{
+    color: #676767;
+    background: #ffffff;
+  }
+
+  #navigation .nav.navbar-nav li > a.main-search:hover,
+  #navigation .nav.navbar-nav li > a.main-search:focus,
+  #navigation .nav.navbar-nav li > a.main-search:active{
+    background: transparent;
+  }
+
+  #navigation .nav.navbar-nav li li a:hover,
+  #navigation .nav.navbar-nav li li a:active,
+  #navigation .nav.navbar-nav li li a:focus,
+  #navigation .nav.navbar-nav li.current > a,
+  #navigation .navbar-nav li li.current-menu-parent > a,
+  #navigation .navbar-nav li li.current-menu-ancestor > a,
+  #navigation .navbar-nav li li.current-menu-item  > a{
+    color: #6ba72b;
+    background: #ffffff;
+  }
+
+  /* BODY */
+  body[class*=" "]{
+    background-color: #f5f5f5;
+
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  h1{
+    font-size: 38px;
+    line-height: 1.25;
+  }
+
+  h2{
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  h3{
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  h4{
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  h5{
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  h6{
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  /* MAIN COLOR */
+  a, a:hover, a:focus, a:active, a:visited,
+  a.grey:hover,
+  .section-title i,
+  .blog-title:hover h4, .blog-title:hover h5,
+  .next-prev a:hover .fa,
+  .blog-read a, .blog-read a:hover, .blog-read a:active, .blog-read a:visited, .blog-read a:focus, .blog-read a:visited:hover,
+  .fake-thumb-holder .post-format,
+  .comment-reply-link:hover,
+  .category-list .icon,
+  .widget .category-list li:hover .icon,
+  .my-menu li.active a, .my-menu li:hover a,
+  .recipe-actions li:hover, .recipe-actions li:hover a
+  {
+    color: #6ba72b;
+  }
+
+  .user-block-overlay{
+    background: rgba( 107, 167, 43, 0.2 );
+  }
+
+  .link-overlay{
+    background: rgba( 107, 167, 43, 0.8 );
+  }
+
+  .my-menu li.active, .my-menu li:hover,
+  .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
+    background: rgba( 107, 167, 43, 0.06 );
+  }
+
+  .single-recipe:not(.author) .nav-tabs li.active:before{
+    border-color: #6ba72b transparent;
+  }
+
+  blockquote,
+  .widget-title:after,
+  .next-prev a:hover .fa
+  {
+    border-color: #6ba72b;
+  }
+
+  .my-menu li.active, .my-menu li:hover{
+    border-left-color: #6ba72b;
+  }
+
+  table th,
+  .tagcloud a, .btn, a.btn,
+  .rslides_nav,
+  .form-submit #submit,
+  .nav-tabs > li > a:hover,
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus,
+  .panel-default > .panel-heading a:not(.collapsed),
+  .category-list li:hover .icon,
+  .dashboard-item .badge,
+  .ingredients-list li.checked .fake-checkbox,
+  .sticky-wrap,
+  .category-list a:hover .icon,
+  .pagination a,
+  .pagination a:visited,
+  .pagination a:active,
+  .pagination a:focus,
+  .pagination > span
+  {
+    color: #ffffff;
+    background-color: #6ba72b;
+  }
+
+  @media only screen and ( min-width: 768px ){
+    .ingredients-list li:hover .fake-checkbox{
+      color: #ffffff;
+      background-color: #6ba72b;
+    }
+  }
+
+  .tagcloud a:hover, .tagcloud a:focus, .tagcloud a:active,
+  .btn:hover, .btn:focus, .btn:active,
+  .form-submit #submit:hover, .form-submit #submit:focus, .form-submit #submit:active,
+  .pagination a:hover,
+  .pagination > span
+  {
+    color: #ffffff;
+    background-color: #333333;
+  }
+
+  .blog-read a, .blog-read a:hover, .blog-read a:active, .blog-read a:visited, .blog-read a:focus, .blog-read a:visited:hover{
+    background: #ffffff;
+    color: #6ba72b;
+  }
+
+  .copyrights{
+    background: #333333;
+    color: #ffffff;
+  }
+
+  .copyrights-share, .copyrights-share:visited{
+    background: #ffffff;
+    color: #333333;
+  }
+</style>
+<link rel='stylesheet' id='recipe-fonts-css'  href='http://fonts.googleapis.com/css?family=Ubuntu%3A400%2C300%2C700%26subset%3Dall%7CLato%3A400%2C300%2C700%26subset%3Dall&amp;ver=1.0.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../assets/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='../../assets/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+
+<script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-jquery-ui-core-720abd0f8f0672c3c4c1fffa58980205.js'></script>
+<link rel='https://api.w.org/' href='../../assets/wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../assets/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.2.3" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed" href="../../assets/wp-json/oembed/1.0/embedc8c5.json?url=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../assets/wp-json/oembed/1.0/embed74c8?url=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2F&amp;format=xml" />
+
+
+
+
+
+
+
+
+
+<div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container col-md-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+  <section>
+    <div class="container">
+      <div class="section-title clearfix">
+        <h3 class="pull-left">
+          <i class="fas fa-filter"></i>
+          Quick Filter				</h3>
+        <a href="recipes-search/index.html" class="btn pull-right">All Categories</a>
+      </div>
+      <div class="row category-list">
+        <div class="col-sm-4">
+          <a href="recipes-search/index1feb.html?recipe-category=beverages">
+            <span class="icon icon_198"></span> Beverages</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="recipes-search/index45f1.html?recipe-category=breads"><span class="icon icon_173"></span> Breads</a></div><div class="col-sm-4"><a href="recipes-search/indexeaf7.html?recipe-category=breakfast"><span class="icon icon_56"></span> Breakfast</a></div><div class="col-sm-4"><a href="recipes-search/indexf112.html?recipe-category=burgers"><span class="icon icon_71"></span> Burgers</a></div><div class="col-sm-4"><a href="recipes-search/index3f99.html?recipe-category=desserts"><span class="icon icon_146"></span> Desserts</a></div><div class="col-sm-4"><a href="recipes-search/index5157.html?recipe-category=lunch"><span class="icon icon_176"></span> Lunch</a></div><div class="col-sm-4"><a href="recipes-search/indexbc23.html?recipe-category=salads"><span class="icon icon_49"></span> Salads</a></div><div class="col-sm-4"><a href="recipes-search/index09a6.html?recipe-category=soups"><span class="icon icon_102"></span> Soups</a></div><div class="col-sm-4"><a href="recipes-search/indexa9fb.html?recipe-category=vegetarian"><span class="icon icon_45"></span> Vegetarian</a></div>			</div>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container">
+      <div class="section-title clearfix">
+        <h3 class="pull-left">
+          <i class="fas fa-star"></i>
+          Top Rated Recipes					</h3>
+        <a href="recipes-search/indexb75c.html?sort=ratings-desc" class="btn pull-right">All Top Rated Recipes</a>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="recipe-box white-block">
+            <div class="blog-media">
+              <div class="embed-responsive embed-responsive-16by9">
+                <a href="recipe/homemade-granola/index.html"><img width="360" height="203" src="../assets/wp-content/uploads/2015/02/nougat-599518_1920-360x203.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-360x203.jpg 360w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-263x148.jpg 263w" sizes="(max-width: 360px) 100vw, 360px" /></a></div>		<div class="ratings">
+              <span class="bottom-ratings tip" data-title="Average Rate: 4.75 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 95%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>		</div>
+            </div>
+            <div class="content-inner">
+              <a href="recipe/homemade-granola/index.html" class="blog-title">
+                <h4>Homemade Granola</h4>
+              </a>
+
+              <p>This is a great recipe for homemade granola. I make it weekly! Any dried fruit can be substituted for the raisins. I use dried cranberries.</p>
+
+              <div class="avatar">
+                <img src="../assets/wp-content/uploads/2015/02/av_11-25x25.png" width="25" height="25" alt="John Doe" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+                By 			<a href="author/john/index.html">
+                John Doe
+              </a>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level easy" data-title="Difficulty: Easy">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fa fa-table"></i>
+                    Few Dozen					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fa fa-users"></i>
+                    3 People					</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+        <div class="col-sm-4">
+          <div class="recipe-box white-block">
+            <div class="blog-media">
+              <div class="embed-responsive embed-responsive-16by9">
+                <a href="recipe/creamy-strawberry-crepes/index.html"><img width="360" height="203" src="../assets/wp-content/uploads/2015/02/pancakes-282239_1920-360x203.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-360x203.jpg 360w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-263x148.jpg 263w" sizes="(max-width: 360px) 100vw, 360px" /></a></div>		<div class="ratings">
+              <span class="bottom-ratings tip" data-title="Average Rate: 4.5 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 90%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>		</div>
+            </div>
+            <div class="content-inner">
+              <a href="recipe/creamy-strawberry-crepes/index.html" class="blog-title">
+                <h4>Creamy Strawberry Crepes</h4>
+              </a>
+
+              <p>This recipe has been a family favorite for over 30 years! These crepes are delicious and very rich! Be sure you have at least 1 hour to prepare.</p>
+
+              <div class="avatar">
+                <img src="../assets/wp-content/uploads/2015/02/av_9-25x25.png" width="25" height="25" alt="Marina Doe" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+                By 			<a href="author/marina/index.html">
+                Marina Doe
+              </a>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level easy" data-title="Difficulty: Easy">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fa fa-table"></i>
+                    Few Dozen					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fa fa-users"></i>
+                    3 People					</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+        <div class="col-sm-4">
+          <div class="recipe-box white-block">
+            <div class="blog-media">
+              <div class="embed-responsive embed-responsive-16by9">
+                <a href="recipe/avocado-panzanella-salad/index.html"><img width="360" height="203" src="../assets/wp-content/uploads/2015/02/salad-468902_1920-360x203.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-360x203.jpg 360w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-263x148.jpg 263w" sizes="(max-width: 360px) 100vw, 360px" /></a></div>		<div class="ratings">
+              <span class="bottom-ratings tip" data-title="Average Rate: 4.5 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 90%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>		</div>
+            </div>
+            <div class="content-inner">
+              <a href="recipe/avocado-panzanella-salad/index.html" class="blog-title">
+                <h4>Avocado panzanella salad</h4>
+              </a>
+
+              <p>This high fibre salad is a vibrant mix of tomatoes, avocado and crunchy pieces of ciabatta. Thissalad is full of the authentic flavours of Italy.</p>
+
+              <div class="avatar">
+                <img src="../assets/wp-content/uploads/2015/02/av_1-25x25.png" width="25" height="25" alt="Melissa Hearth" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+                By 			<a href="author/admin/index.html">
+                Melissa Hearth
+              </a>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level medium" data-title="Difficulty: Medium">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fa fa-table"></i>
+                    3 Bowles					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fa fa-users"></i>
+                    4 People					</li>
+
+                  <li class="tip" data-title="Cook Time">
+                    <i class="fa fa-clock-o"></i>
+                    15min					</li>
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+      </div>
+    </div>
+  </section>
+  <section class="">
+    <div class="container">
+      <div class="section-title clearfix">
+        <h3 class="pull-left">
+          <i class="fa fa-clock-o"></i>
+          Latest Recipes					</h3>
+        <a href="recipes-search/index2305.html?sort=date-desc" class="btn pull-right">All Latest Recipes</a>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="recipe-box white-block">
+            <div class="blog-media">
+              <div class="embed-responsive embed-responsive-16by9">
+                <a href="recipe/french-onion-soup-gratinee/index.html"><img width="360" height="203" src="../assets/wp-content/uploads/2015/02/france-confectionery-83373-360x203.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-360x203.jpg 360w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-263x148.jpg 263w" sizes="(max-width: 360px) 100vw, 360px" /></a></div>		<div class="ratings">
+              <span class="bottom-ratings tip" data-title="Average Rate: 4 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 80%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>		</div>
+            </div>
+            <div class="content-inner">
+              <a href="recipe/french-onion-soup-gratinee/index.html" class="blog-title">
+                <h4>French Onion Soup Gratinee</h4>
+              </a>
+
+              <p>About as good as it gets! This is the version of French Onion Soup that people seek when they go to restaurants. Healthy and easy.</p>
+
+              <div class="avatar">
+                <img src="../assets/wp-content/uploads/2015/02/av_7-25x25.png" width="25" height="25" alt="Nick Slick" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+                By 			<a href="author/nick/index.html">
+                Nick Slick
+              </a>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level advanced" data-title="Difficulty: Advanced">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fas fa-table"></i>
+                    4 Bowls					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fas fa-users"></i>
+                    4 People					</li>
+
+                  <li class="tip" data-title="Cook Time">
+                    <i class="fas fa-clock-o"></i>
+                    5min					</li>
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+        <div class="col-sm-4">
+          <div class="recipe-box white-block">
+            <div class="blog-media">
+              <div class="embed-responsive embed-responsive-16by9">
+                <a href="recipe/avocado-panzanella-salad/index.html"><img width="360" height="203" src="../assets/wp-content/uploads/2015/02/salad-468902_1920-360x203.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-360x203.jpg 360w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-263x148.jpg 263w" sizes="(max-width: 360px) 100vw, 360px" /></a></div>		<div class="ratings">
+              <span class="bottom-ratings tip" data-title="Average Rate: 4.5 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 90%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>		</div>
+            </div>
+            <div class="content-inner">
+              <a href="recipe/avocado-panzanella-salad/index.html" class="blog-title">
+                <h4>Avocado panzanella salad</h4>
+              </a>
+
+              <p>This high fibre salad is a vibrant mix of tomatoes, avocado and crunchy pieces of ciabatta. Thissalad is full of the authentic flavours of Italy.</p>
+
+              <div class="avatar">
+                <img src="../assets/wp-content/uploads/2015/02/av_1-25x25.png" width="25" height="25" alt="Melissa Hearth" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+                By 			<a href="author/admin/index.html">
+                Melissa Hearth
+              </a>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level medium" data-title="Difficulty: Medium">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fas fa-table"></i>
+                    3 Bowles					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fas fa-users"></i>
+                    4 People					</li>
+
+                  <li class="tip" data-title="Cook Time">
+                    <i class="fas fa-clock-o"></i>
+                    15min					</li>
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+        <div class="col-sm-4">
+          <div class="recipe-box white-block">
+            <div class="blog-media">
+              <div class="embed-responsive embed-responsive-16by9">
+                <a href="recipe/kale-and-feta-salad/index.html"><img width="360" height="203" src="../assets/wp-content/uploads/2015/02/salad-374173_1920-360x203.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-374173_1920-360x203.jpg 360w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-374173_1920-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-374173_1920-263x148.jpg 263w" sizes="(max-width: 360px) 100vw, 360px" /></a></div>		<div class="ratings">
+              <span class="bottom-ratings tip" data-title="Average Rate: 4 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 80%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>		</div>
+            </div>
+            <div class="content-inner">
+              <a href="recipe/kale-and-feta-salad/index.html" class="blog-title">
+                <h4>Kale and Feta Salad</h4>
+              </a>
+
+              <p>Salads can be healthy, satisfying meals on their own or perfect accompaniments to main dishes. We&#8217;ve got a great selection of salads.</p>
+
+              <div class="avatar">
+                <img src="../assets/wp-content/uploads/2015/02/av_6-25x25.png" width="25" height="25" alt="Nella Heart" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+                By 			<a href="author/nella/index.html">
+                Nella Heart
+              </a>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level easy" data-title="Difficulty: Easy">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fas fa-table"></i>
+                    3 Bowles					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fas fa-users"></i>
+                    4 People					</li>
+
+                  <li class="tip" data-title="Cook Time">
+                    <i class="fas fa-clock-o"></i>
+                    15min					</li>
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="section-title clearfix">
+        <h3 class="pull-left">
+          <i class="fab fa-users"></i>
+          Top Rated Authors				</h3>
+        <a href="members/index.html" class="btn pull-right">All Authors</a>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-xs-4">
+          <div class="user-block">
+            <a href="author/sally/index.html" data-title="Sally Marley" class="tip">
+              <img src="../assets/wp-content/uploads/2015/02/av_4.png" width="150" height="150" alt="Sally Marley" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />									<span class="user-block-overlay animation">
+										<i class="fab fa-plus-circle animation"></i>
+									</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+          <div class="user-block">
+            <a href="author/marina/index.html" data-title="Marina Doe" class="tip">
+              <img src="../assets/wp-content/uploads/2015/02/av_9.png" width="150" height="150" alt="Marina Doe" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />									<span class="user-block-overlay animation">
+										<i class="fa fa-plus-circle animation"></i>
+									</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+          <div class="user-block">
+            <a href="author/admin/index.html" data-title="Melissa Hearth" class="tip">
+              <img src="../assets/wp-content/uploads/2015/02/av_1.png" width="150" height="150" alt="Melissa Hearth" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />									<span class="user-block-overlay animation">
+										<i class="fa fa-plus-circle animation"></i>
+									</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+          <div class="user-block">
+            <a href="author/sara/index.html" data-title="Sara Parker" class="tip">
+              <img src="../assets/wp-content/uploads/2015/02/av_2.png" width="150" height="150" alt="Sara Parker" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />									<span class="user-block-overlay animation">
+										<i class="fas fa-plus-circle animation"></i>
+									</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+          <div class="user-block">
+            <a href="author/nella/index.html" data-title="Nella Heart" class="tip">
+              <img src="../assets/wp-content/uploads/2015/02/av_6.png" width="150" height="150" alt="Nella Heart" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />									<span class="user-block-overlay animation">
+										<i class="fa fa-plus-circle animation"></i>
+									</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+          <div class="user-block">
+            <a href="author/nick/index.html" data-title="Nick Slick" class="tip">
+              <img src="../assets/wp-content/uploads/2015/02/av_7.png" width="150" height="150" alt="Nick Slick" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />									<span class="user-block-overlay animation">
+										<i class="fa fa-plus-circle animation"></i>
+									</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="">
+    <div class="container">
+      <div class="section-title clearfix">
+        <h3 class="pull-left">
+          <i class="fa fa-heart"></i>
+          Most Favourited Recipes					</h3>
+        <a href="recipes-search/indexa4c4.html?sort=favourited-desc" class="btn pull-right">All Most Favourited Recipes</a>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="recipe-box recipe-box-alt white-block">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="blog-media">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <a href="recipe/creamy-strawberry-crepes/index.html"><img width="263" height="148" src="../assets/wp-content/uploads/2015/02/pancakes-282239_1920-263x148.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-263x148.jpg 263w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-360x203.jpg 360w" sizes="(max-width: 263px) 100vw, 263px" /></a></div>				<div class="ratings">
+                  <span class="bottom-ratings tip" data-title="Average Rate: 4.5 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 90%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>				</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="content-inner content-inner-alt">
+                  <a href="recipe/creamy-strawberry-crepes/index.html" class="blog-title">
+                    <h5>Creamy Strawberry Crepes</h5>
+                  </a>
+
+                  <p>This recipe has been a family favorite for over 30 years! Thes&#8230;</p>
+                </div>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level easy" data-title="Difficulty: Easy">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li>
+                    <div class="avatar">
+                      <img src="../assets/wp-content/uploads/2015/02/av_9-25x25.png" width="25" height="25" alt="Marina Doe" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+                      By 						<a href="author/marina/index.html">
+                      Marina Doe
+                    </a>
+                    </div>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fab fa-table"></i>
+                    Few Dozen					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fab fa-users"></i>
+                    3 People					</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+        <div class="col-sm-6">
+          <div class="recipe-box recipe-box-alt white-block">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="blog-media">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <a href="recipe/french-onion-soup-gratinee/index.html"><img width="263" height="148" src="../assets/wp-content/uploads/2015/02/france-confectionery-83373-263x148.jpg" class="embed-responsive-item wp-post-image" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-263x148.jpg 263w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-848x477.jpg 848w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-360x203.jpg 360w" sizes="(max-width: 263px) 100vw, 263px" /></a></div>				<div class="ratings">
+                  <span class="bottom-ratings tip" data-title="Average Rate: 4 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 80%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span>				</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="content-inner content-inner-alt">
+                  <a href="recipe/french-onion-soup-gratinee/index.html" class="blog-title">
+                    <h5>French Onion Soup Gratinee</h5>
+                  </a>
+
+                  <p>About as good as it gets! This is the version of French Onion &#8230;</p>
+                </div>
+              </div>
+            </div>
+            <div class="content-footer">
+              <div class="content-inner">
+                <ul class="list-unstyled list-inline recipe-meta clearfix">
+                  <li>
+						<span class="tip level advanced" data-title="Difficulty: Advanced">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+                  </li>
+                  <li>
+                    <div class="avatar">
+                      <img src="../assets/wp-content/uploads/2015/02/av_7-25x25.png" width="25" height="25" alt="Nick Slick" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+                      By 						<a href="author/nick/index.html">
+                      Nick Slick
+                    </a>
+                    </div>
+                  </li>
+                  <li class="tip" data-title="Yield">
+                    <i class="fab fa-table"></i>
+                    4 Bowls					</li>
+
+                  <li class="tip" data-title="Servings">
+                    <i class="fab fa-users"></i>
+                    4 People					</li>
+
+                  <li class="tip" data-title="Cook Time">
+                    <i class="fab fa-clock-o"></i>
+                    5min					</li>
+                </ul>
+              </div>
+            </div>
+          </div>						</div>
+      </div>
+    </div>
+  </section>
+</div></div></div></div>
+
+<a href="javascript:;" class="to_top btn">
+  <span class="fa fa-angle-up"></span>
+</a>
+
+
+<input type="hidden" id="social_connect_login_form_uri" value="wp-login.html" />
+<section class="footer_widget_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="widget white-block clearfix widget_widget_recipe" ><div class="widget-title-wrap"><h5 class="widget-title">Most Liked Recipes</h5></div><ul class="list-unstyled no-top-padding"><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/creamy-strawberry-crepes/index.html">
+              Creamy Strawberry Crepes
+            </a>
+            <p class="grey"><i class="fa fa-thumbs-o-up tip" data-title="Likes"></i>280</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/france-confectionery-83373-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/french-onion-soup-gratinee/index.html">
+              French Onion Soup Gratinee
+            </a>
+            <p class="grey"><i class="fa fa-thumbs-o-up tip" data-title="Likes"></i>198</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/homemade-granola/index.html">
+              Homemade Granola
+            </a>
+            <p class="grey"><i class="fa fa-thumbs-o-up tip" data-title="Likes"></i>148</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/bev_2-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/chilled-mocha/index.html">
+              Chilled mocha
+            </a>
+            <p class="grey"><i class="fa fa-thumbs-o-up tip" data-title="Likes"></i>125</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/salad-468902_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/avocado-panzanella-salad/index.html">
+              Avocado panzanella salad
+            </a>
+            <p class="grey"><i class="fa fa-thumbs-o-up tip" data-title="Likes"></i>69</p>
+          </div>
+          <div class="clearfix"></div>
+        </li></ul></div>				</div>
+      <div class="col-md-3">
+        <div class="widget white-block clearfix widget_widget_recipe" ><div class="widget-title-wrap"><h5 class="widget-title">Most Viewed Recipes</h5></div><ul class="list-unstyled no-top-padding"><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/creamy-strawberry-crepes/index.html">
+              Creamy Strawberry Crepes
+            </a>
+            <p class="grey"><i class="fa fa-eye tip" data-title="Views"></i>8514</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/homemade-granola/index.html">
+              Homemade Granola
+            </a>
+            <p class="grey"><i class="fa fa-eye tip" data-title="Views"></i>7535</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/france-confectionery-83373-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/french-onion-soup-gratinee/index.html">
+              French Onion Soup Gratinee
+            </a>
+            <p class="grey"><i class="fa fa-eye tip" data-title="Views"></i>7505</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/bev_2-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/chilled-mocha/index.html">
+              Chilled mocha
+            </a>
+            <p class="grey"><i class="fa fa-eye tip" data-title="Views"></i>4779</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/salad-468902_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/avocado-panzanella-salad/index.html">
+              Avocado panzanella salad
+            </a>
+            <p class="grey"><i class="fa fa-eye tip" data-title="Views"></i>3144</p>
+          </div>
+          <div class="clearfix"></div>
+        </li></ul></div>				</div>
+      <div class="col-md-3">
+        <div class="widget white-block clearfix widget_widget_recipe" ><div class="widget-title-wrap"><h5 class="widget-title">Top Rated Recipes</h5></div><ul class="list-unstyled no-top-padding"><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/homemade-granola/index.html">
+              Homemade Granola
+            </a>
+            <p class="grey"><span class="bottom-ratings tip" data-title="Average Rate: 4.75 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 95%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span></p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/creamy-strawberry-crepes/index.html">
+              Creamy Strawberry Crepes
+            </a>
+            <p class="grey"><span class="bottom-ratings tip" data-title="Average Rate: 4.5 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 90%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span></p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="wp-content/uploads/2015/02/salad-468902_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/salad-468902_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/avocado-panzanella-salad/index.html">
+              Avocado panzanella salad
+            </a>
+            <p class="grey"><span class="bottom-ratings tip" data-title="Average Rate: 4.5 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 90%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span></p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/bev_2-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/chilled-mocha/index.html">
+              Chilled mocha
+            </a>
+            <p class="grey"><span class="bottom-ratings tip" data-title="Average Rate: 4.33 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 86.6%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span></p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/brownie-548591-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/brownie-548591-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/brownie-548591-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/brownie-548591-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/brownie-548591-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/delicious-chocolate-cake/index.html">
+              Delicious Chocolate Cake
+            </a>
+            <p class="grey"><span class="bottom-ratings tip" data-title="Average Rate: 4.33 / 5"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="top-ratings" style="width: 86.6%"><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span><span class="icon icon_rate"></span></span></span></p>
+          </div>
+          <div class="clearfix"></div>
+        </li></ul></div>				</div>
+      <div class="col-md-3">
+        <div class="widget white-block clearfix widget_widget_recipe" ><div class="widget-title-wrap"><h5 class="widget-title">Most Favourited Recipes</h5></div><ul class="list-unstyled no-top-padding"><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/pancakes-282239_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/creamy-strawberry-crepes/index.html">
+              Creamy Strawberry Crepes
+            </a>
+            <p class="grey"><i class="fa fa-heart-o tip" data-title="Favourites"></i>35</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/france-confectionery-83373-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/france-confectionery-83373-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/french-onion-soup-gratinee/index.html">
+              French Onion Soup Gratinee
+            </a>
+            <p class="grey"><i class="fa fa-heart-o tip" data-title="Favourites"></i>27</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/nougat-599518_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/homemade-granola/index.html">
+              Homemade Granola
+            </a>
+            <p class="grey"><i class="fa fa-heart-o tip" data-title="Favourites"></i>23</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/bev_2-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/bev_2-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/chilled-mocha/index.html">
+              Chilled mocha
+            </a>
+            <p class="grey"><i class="fa fa-heart-o tip" data-title="Favourites"></i>22</p>
+          </div>
+          <div class="clearfix"></div>
+        </li><li class="top-authors">
+          <div class="widget-image-thumb">
+            <img width="50" height="50" src="../assets/wp-content/uploads/2015/02/hamburger-494706_1920-50x50.jpg" class="img-responsive" alt="" srcset="http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/hamburger-494706_1920-50x50.jpg 50w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/hamburger-494706_1920-150x150.jpg 150w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/hamburger-494706_1920-25x25.jpg 25w, http://demo.djmimi.net/themes/recipe/wp-content/uploads/2015/02/hamburger-494706_1920-40x40.jpg 40w" sizes="(max-width: 50px) 100vw, 50px" />
+          </div>
+
+          <div class="widget-text">
+            <a href="recipe/feta-cheese-turkey-burgers/index.html">
+              Feta Cheese Turkey Burgers
+            </a>
+            <p class="grey"><i class="fa fa-heart-o tip" data-title="Favourites"></i>14</p>
+          </div>
+          <div class="clearfix"></div>
+        </li></ul></div>				</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<link rel='stylesheet' id='dashicons-css'  href='../../assets/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='social_connect-group-css' href='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-social_connect-809216b616e41ddefca17a6eb0a5ce86.css' type='text/css' media='all' />
+
+<script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-recipe-bootstrap-192bd49cb9c9f746c162b61552bc5ba4.js'></script>
+<script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-wp-embed-723c3d4a5229ae0dc5f7b091aa737239.js'></script>
+
+

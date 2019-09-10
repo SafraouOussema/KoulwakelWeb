@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import {DataTableModule} from "angular-6-datatable";
 
 
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -21,7 +20,10 @@ import {IngrédientsService} from './services/ingrédients.service'
 import { RecipeComponent } from './recipe/recipe.component';
 import {RecipeService} from  './services/recipe.service';
 import  {PictureService} from  './services/picture.service';
-import  {PictureRecipeService} from './services/picture-recipe.service'
+import  {PictureRecipeService} from './services/picture-recipe.service';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { FrigoComponent } from './frigo/frigo.component';
+import {FrigoService} from  './services/frigo.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import  {PictureRecipeService} from './services/picture-recipe.service'
     AdminComponent,
     PmComponent,
     IngredientsComponent,
-    RecipeComponent
+    RecipeComponent,
+    RecipeDetailComponent,
+    FrigoComponent
 
   ],
   imports: [
@@ -41,8 +45,9 @@ import  {PictureRecipeService} from './services/picture-recipe.service'
     FormsModule,
     HttpClientModule,
     DataTableModule
+
   ],
-  providers: [ httpInterceptorProviders,IngrédientsService,PictureService,PictureRecipeService ,RecipeService],
+  providers: [ httpInterceptorProviders,IngrédientsService,PictureService,PictureRecipeService,FrigoService ,RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

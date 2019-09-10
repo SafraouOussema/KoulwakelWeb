@@ -1,0 +1,40 @@
+
+<table class="table table-striped " [mfData]="niveaus" #mf="mfDataTable" [mfRowsOnPage]="5">
+  <thead>
+  <tr>
+
+    <th style="width: 10%">
+      <mfDefaultSorter by="nom">nom</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="nom">ajouter ingredient</mfDefaultSorter>
+    </th>
+    <th style="width: 10%">
+      <mfDefaultSorter by="nom">supprimer frigo</mfDefaultSorter>
+    </th>
+
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let niveau of mf.data">
+
+    <td >{{niveau.name}}</td>
+    <td> <a mat-button [routerLink]="['/ing', niveau.id]"><i class="fa fa-plus-square">aa</i></a></td>
+
+
+
+
+
+  </tr>
+
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="3">
+      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  </tfoot>
+
+</table>
