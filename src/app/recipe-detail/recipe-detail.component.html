@@ -1,28 +1,486 @@
-<div class="row"  >
-  <div class="col-md-10" *ngIf="gcs">
-    <div class="thumbnail">
 
-      <img [src]="imageBlobUrl"height="40%" width="40%" style="width:100%">
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
 
-      <p> titre: {{gcs.title}} </p>
+<style type="text/css">
+  img.wp-smiley,
+  img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+</style>
+<link rel='stylesheet' id='recipe-bootstrap-group-css' href='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-recipe-bootstrap-d3a0ed4239e91b4fc7793b9b45c1397a.css' type='text/css' media='all' />
+<style id='recipe-style-inline-css' type='text/css'>
+  /* HEADER */
+  .top-bar{
+    background: #333333;
+  }
 
-      <p> pays: {{gcs.country}} </p>
-      <p> nombre de personne : {{gcs.nbPerson}} </p>
-      <p> durée de préparation {{gcs.prepDuration}} </p>
-      <p> difficulté : {{gcs.difficulty}} </p>
+  .account-action .btn{
+    color: #ffffff}
+
+  .account-action .btn:hover{
+    background: transparent;
+    color: #ffffff}
+
+  /* NAVIGATION */
+  .nav.navbar-nav li a{
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+  }
+
+  .nav.navbar-nav > li li{
+    border-color: #eeeeee;
+  }
+
+  .navigation-bar{
+    background: #ffffff;
+  }
+
+  .nav.navbar-nav li a{
+    color: #676767;
+  }
+
+  .navbar-toggle,
+  #navigation .nav.navbar-nav li.open > a,
+  #navigation .nav.navbar-nav li > a:hover,
+  #navigation .nav.navbar-nav li > a:focus ,
+  #navigation .nav.navbar-nav li > a:active,
+  #navigation .nav.navbar-nav li.current > a,
+  #navigation .navbar-nav li.current-menu-parent > a,
+  #navigation .navbar-nav li.current-menu-ancestor > a,
+  #navigation .navbar-nav > li.current-menu-item  > a{
+    color: #6ba72b;
+    background: #ffffff;
+  }
+
+  .nav.navbar-nav li li a{
+    color: #676767;
+    background: #ffffff;
+  }
+
+  #navigation .nav.navbar-nav li > a.main-search:hover,
+  #navigation .nav.navbar-nav li > a.main-search:focus,
+  #navigation .nav.navbar-nav li > a.main-search:active{
+    background: transparent;
+  }
+
+  #navigation .nav.navbar-nav li li a:hover,
+  #navigation .nav.navbar-nav li li a:active,
+  #navigation .nav.navbar-nav li li a:focus,
+  #navigation .nav.navbar-nav li.current > a,
+  #navigation .navbar-nav li li.current-menu-parent > a,
+  #navigation .navbar-nav li li.current-menu-ancestor > a,
+  #navigation .navbar-nav li li.current-menu-item  > a{
+    color: #6ba72b;
+    background: #ffffff;
+  }
+
+  /* BODY */
+  body[class*=" "]{
+    background-color: #f5f5f5;
+    background-image: url(  );
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  h1{
+    font-size: 38px;
+    line-height: 1.25;
+  }
+
+  h2{
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  h3{
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  h4{
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  h5{
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  h6{
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  /* MAIN COLOR */
+  a, a:hover, a:focus, a:active, a:visited,
+  a.grey:hover,
+  .section-title i,
+  .blog-title:hover h4, .blog-title:hover h5,
+  .next-prev a:hover .fa,
+  .blog-read a, .blog-read a:hover, .blog-read a:active, .blog-read a:visited, .blog-read a:focus, .blog-read a:visited:hover,
+  .fake-thumb-holder .post-format,
+  .comment-reply-link:hover,
+  .category-list .icon,
+  .widget .category-list li:hover .icon,
+  .my-menu li.active a, .my-menu li:hover a,
+  .recipe-actions li:hover, .recipe-actions li:hover a
+  {
+    color: #6ba72b;
+  }
+
+  .user-block-overlay{
+    background: rgba( 107, 167, 43, 0.2 );
+  }
+
+  .link-overlay{
+    background: rgba( 107, 167, 43, 0.8 );
+  }
+
+  .my-menu li.active, .my-menu li:hover,
+  .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
+    background: rgba( 107, 167, 43, 0.06 );
+  }
+
+  .single-recipe:not(.author) .nav-tabs li.active:before{
+    border-color: #6ba72b transparent;
+  }
+
+  blockquote,
+  .widget-title:after,
+  .next-prev a:hover .fa
+  {
+    border-color: #6ba72b;
+  }
+
+  .my-menu li.active, .my-menu li:hover{
+    border-left-color: #6ba72b;
+  }
+
+  table th,
+  .tagcloud a, .btn, a.btn,
+  .rslides_nav,
+  .form-submit #submit,
+  .nav-tabs > li > a:hover,
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus,
+  .panel-default > .panel-heading a:not(.collapsed),
+  .category-list li:hover .icon,
+  .dashboard-item .badge,
+  .ingredients-list li.checked .fake-checkbox,
+  .sticky-wrap,
+  .category-list a:hover .icon,
+  .pagination a,
+  .pagination a:visited,
+  .pagination a:active,
+  .pagination a:focus,
+  .pagination > span
+  {
+    color: #ffffff;
+    background-color: #6ba72b;
+  }
+
+  @media only screen and ( min-width: 768px ){
+    .ingredients-list li:hover .fake-checkbox{
+      color: #ffffff;
+      background-color: #6ba72b;
+    }
+  }
+
+  .tagcloud a:hover, .tagcloud a:focus, .tagcloud a:active,
+  .btn:hover, .btn:focus, .btn:active,
+  .form-submit #submit:hover, .form-submit #submit:focus, .form-submit #submit:active,
+  .pagination a:hover,
+  .pagination > span
+  {
+    color: #ffffff;
+    background-color: #333333;
+  }
+
+  .blog-read a, .blog-read a:hover, .blog-read a:active, .blog-read a:visited, .blog-read a:focus, .blog-read a:visited:hover{
+    background: #ffffff;
+    color: #6ba72b;
+  }
+
+  .copyrights{
+    background: #333333;
+    color: #ffffff;
+  }
+
+  .copyrights-share, .copyrights-share:visited{
+    background: #ffffff;
+    color: #333333;
+  }
+</style>
+<link rel='stylesheet' id='recipe-fonts-css'  href='http://fonts.googleapis.com/css?family=Ubuntu%3A400%2C300%2C700%26subset%3Dall%7CLato%3A400%2C300%2C700%26subset%3Dall&amp;ver=1.0.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../assets/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='../../assets/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var social_connect_data = {"wordpress_enabled":""};
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-jquery-ui-core-720abd0f8f0672c3c4c1fffa58980205.js'></script>
+<link rel='https://api.w.org/' href='../../assets/wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../assets/wp-includes/wlwmanifest.xml" />
 
 
+
+
+
+
+
+
+
+
+
+
+
+<section class="single-blog"  *ngIf="gcs">
+  <input type="hidden" name="post-id" value="636">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9">
+        <div class="white-block single-item">
+          <div class="blog-media">
+            <div class="tab-content">
+
+              <div role="tabpanel" class="tab-pane fade in active" id="tab_featured">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <img width="848" height="477" [src]="imageBlobUrl" class="embed-responsive-item featured-image wp-post-image" alt=""      />									</div>
+              </div>
+
+
+
+
+            </div>
+
+
+
+          </div>
+          <div class="content-inner">
+
+            <h1 class="post-title h3-size">Boilermaker Tailgate Chili</h1>
+
+            <div class="post-content clearfix">
+              <p><span id="lblDescription">I&#8217;ve been making variations of this salad for years. I recently learned how to massage the kale and it makes a huge difference. I had a friend ask for my recipe and I realized I don&#8217;t have one. This is my first attempt at writing a recipe, so please let me know how it works out! I like to change up the ingredients: sometimes a pear instead of an apple, cranberries instead of currants, Parmesan instead of feta, etc. Great as a side dish or by itself the next day for lunch!</span></p>
+
+            </div>
+
+
+            <hr />
+            <div class="row recipe-details">
+              <div class="col-sm-6">
+                <h4 class="section-title">
+                  <i class="fas fa-eye-dropper"></i>
+                  Ingredients</h4>
+                <ul class="list-unstyled ingredients-list">
+                  <li>
+                    <a href="javascript:;" class="fake-checkbox">
+                    <i class="fas fa-check"></i>
+                  </a>1 (4 pound) butternut squash - peeled, seeded, and cubed</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>1/3 yellow onion, minced</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>1/4 cup extra-virgin olive oil</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>1/2 cup Italian bread crumbs</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>1 tablespoon minced fresh thyme</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>6 ounces crumbled blue cheese</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>sea salt and ground black pepper to taste</li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a>1/4 cup Italian bread crumbs</li>									</ul>
+
+              </div>
+              <div class="col-sm-6">
+                <h4 class="section-title ingredients">
+                  <i class="fas fa-sort-numeric-down"></i>
+                  Steps</h4>
+                <ul class="list-unstyled ingredients-list steps-list">
+                  <li><a href="javascript:;" class="fake-checkbox">
+                    <i class="fas fa-check"></i>
+                  </a> Step 1
+                    <div class="step-content">
+                      <p>
+                        <span class="plaincharacterwrap break">Preheat an oven to 425 degrees F (220 degrees C).</span>
+                      </p>
+                  </div>
+                  </li>
+                  <li>
+                    <a href="javascript:;" class="fake-checkbox">
+                      <i class="fa fa-check"></i></a> Step 2<div class="step-content"><p><span class="plaincharacterwrap break">Toss the squash, onion, olive oil, 1/2 cup Italian bread crumbs, thyme, and blue cheese in a large mixing bowl. Season with salt and pepper. Pour the mixture into a large baking dish. Sprinkle 1/4 cup bread crumbs over the squash.</span></p>
+                </div></li><li><a href="javascript:;" class="fake-checkbox"><i class="fa fa-check"></i></a> Step 3<div class="step-content"><p><span class="plaincharacterwrap break">Bake in the preheated oven until lightly browned on top, 35 to 40 minutes.</span></p>
+                </div></li>
+
+                </ul>
+              </div>
+            </div>
+
+            <hr />
+<!--
+            <div class="post-share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2Frecipe%2Fboilermaker-tailgate-chili%2F" class="share facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-fw"></i></a>
+              <a href="http://twitter.com/intent/tweet?source=Recipe&amp;text=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2Frecipe%2Fboilermaker-tailgate-chili%2F" class="share twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-fw"></i></a>
+              <a href="https://plus.google.com/share?url=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2Frecipe%2Fboilermaker-tailgate-chili%2F" class="share google" target="_blank" title="Share on Google+"><i class="fa fa-google fa-fw"></i></a>
+              <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2Frecipe%2Fboilermaker-tailgate-chili%2F&amp;title=Boilermaker%20Tailgate%20Chili&amp;summary=This%20is%20the%20chili%20recipe%20the%20gang%20eats%20at%20Purdue%20Boilermaker%20football%20games.%20Prep%20the%20chili%20the%20night%20before%20and%20then%20reheat%20the%20next%20day.&amp;source=Recipe" class="share linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-fw"></i></a>							<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdemo.djmimi.net%2Fthemes%2Frecipe%2Frecipe%2Fboilermaker-tailgate-chili%2F&amp;name=Boilermaker%20Tailgate%20Chili&amp;description=This%20is%20the%20chili%20recipe%20the%20gang%20eats%20at%20Purdue%20Boilermaker%20football%20games.%20Prep%20the%20chili%20the%20night%20before%20and%20then%20reheat%20the%20next%20day." class="share tumblr" target="_blank" title="Share on Tumblr"><i class="fa fa-tumblr fa-fw"></i></a>
+            </div>
+    -->
+          </div>
+        </div>
+
+        <div class="post-tags white-block">
+          <div class="content-inner">
+            <i class="fas fa-tags"></i> Recipe tags: <a href="../../recipes-search/index03c9.html?recipe-tag=bread">bread</a>, <a href="../../recipes-search/index74ef.html?recipe-tag=burger">burger</a>, <a href="../../recipes-search/index6d17.html?recipe-tag=dinner">dinner</a>, <a href="../../recipes-search/indexe8e4.html?recipe-tag=rolles">rolles</a>, <a href="../../recipes-search/index68e2.html?recipe-tag=salad">salad</a>, <a href="../../recipes-search/index4326.html?recipe-tag=soft">soft</a>, <a href="../../recipes-search/index98b3.html?recipe-tag=soup">soup</a>, <a href="../../recipes-search/index13f7.html?recipe-tag=sweet">sweet</a>, <a href="../../recipes-search/index3327.html?recipe-tag=vegan">vegan</a>						</div>
+        </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="col-md-3"  >
+        <div class="widget white-block clearfix">
+          <ul class="list-unstyled single-nutritions">
+            <li class="recipe-avatar">
+              <img src="../../wp-content/uploads/2015/02/av_11.png" width="150" height="150" alt="John Doe" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />
+              By <a href="../../author/john/index.html"> John Doe</a>
+            </li>
+
+
+
+            <li>
+              Cook Time: <span class="value">{{gcs.prepDuration}}</span>
+            </li>
+
+
+
+
+            <li>
+              Servings: <span class="value">{{gcs.nbPerson}}</span>
+            </li>
+
+            <li class="flex-list">
+              Cuisine:
+              <span class="value">
+						<a href="#">French</a>					</span>
+            </li>
+
+            <li class="flex-list">
+              Category:					<span class="value">
+						<a href="#">Soups</a>					</span>
+            </li>
+
+            <li>
+              Difficulty Level:
+              <span class="value">	<span class="tip level easy" data-title="Difficulty: Easy">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+	</span>
+            </li>
+
+            <li>
+              Ratings:
+              <span class="value"><span class="bottom-ratings tip" data-title="Average Rate: 3 / 5">
+                <span class="far fa-star"></span>
+                <span class="far fa-star"></span>
+                <span class="far fa-star"></span>
+                <span class="far fa-star"></span>
+                <span class="far fa-star"></span>
+                <span class="top-ratings" style="width: 60%">
+                  <span class="fas fa-star"></span><span class="fas fa-star">
+                </span><span class="fas fa-star"></span><span class="fas fa-star">
+
+              </span><span class="fas fa-star"></span></span></span></span>
+            </li>
+
+            <li>
+              Created:				<span class="value">February 24, 2015</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="widget white-block clearfix">
+          <div class="widget-title-wrap">
+            <h5 class="widget-title">
+              Nutrition Facts				</h5>
+          </div>
+          <ul class="list-unstyled single-nutritions">
+            <li>Energy:<span class="value">1838kJ</span></li><li>Fat saturated:<span class="value">9.50g</span></li><li>Fat Total:<span class="value">32.70g</span></li><li>Carbohydrate sugars:<span class="value">4g</span></li><li>Carbohydrate Total:<span class="value">24.40g</span></li><li>Dietary Fibre:<span class="value">3.80g</span></li><li>Protein:<span class="value">10.50g</span></li><li>Cholesterol:<span class="value">20.00mg</span></li><li>Sodium:<span class="value">753.00mg</span></li>			</ul>
+        </div>
+
+        <div class="widget white-block clearfix">
+          <ul class="list-unstyled recipe-actions list-inline">
+            <li class="tip animation" data-title="28">
+              <a href="javascript:;" class="post-like" data-post_id="636">
+                <i class="fas fa-thumbs-up"></i>
+              </a>
+            </li>
+            <li class="tip animation" data-title="938">
+              <i class="fas fa-eye"></i>
+            </li>
+            <li class="tip animation" data-title="4">
+              <a href="javascript:;" class="recipe-favourite" data-recipe_id="636">
+                <i class="fas fa-heart"></i>
+              </a>
+            </li>
+            <li class="tip animation" data-title="Print recipe">
+              <a href="javascript:;" class="print-recipe" data-confirm="Print Image Also?">
+                <i class="fas fa-thumbs-down"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+      </div>
     </div>
-
-
   </div>
+</section>
+<a href="javascript:;" class="to_top btn">
+  <span class="fa fa-angle-up"></span>
+</a>
 
-</div>
-<div *ngFor="let step of steps">
-  <p>Etape :{{step.id}}</p>
-  <div *ngFor="let item of ins">
-    <p>instruction : {{item.id}}</p>
-    <p> description: {{item.description}} </p>
-    <p> quantity :{{item.quantity}}</p>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel='stylesheet' id='dashicons-css'  href='../../assets/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='social_connect-group-css' href='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-social_connect-809216b616e41ddefca17a6eb0a5ce86.css' type='text/css' media='all' />
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var recipe_data = {"search_lang":"Search for recipes...","not_found_lang":"No matching found...","enable_sticky":"yes","ajaxurl":"http:\/\/demo.djmimi.net\/themes\/recipe\/wp-admin\/admin-ajax.php"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-recipe-bootstrap-892f3a8f56350fe618a2f90fe2fad774.js'></script>

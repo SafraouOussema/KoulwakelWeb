@@ -1,15 +1,406 @@
-<div class="row"  >
 
 
-  <div class="col-md-4" *ngFor="let item of pic">
-    <div class="thumbnail">
-      <a href="/w3images/fjords.jpg" target="_blank">
-        <img [src]="imageBlobUrl[item.id]"height="40%" width="40%" style="width:100%">
-        <div class="caption">
-          <p> <a mat-button [routerLink]="['/recipedetail', item.recipe.id]"> {{item.recipe.title}}</a> </p>
+  <title>Recipes </title>
+  <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+  <link rel='dns-prefetch' href='http://s.w.org/' />
+
+  <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 .07em !important;
+      vertical-align: -0.1em !important;
+      background: none !important;
+      padding: 0 !important;
+    }
+  </style>
+  <link rel='stylesheet' id='recipe-bootstrap-group-css' href='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-recipe-bootstrap-d3a0ed4239e91b4fc7793b9b45c1397a.css' type='text/css' media='all' />
+  <style id='recipe-style-inline-css' type='text/css'>
+    /* HEADER */
+    .top-bar{
+      background: #333333;
+    }
+
+    .account-action .btn{
+      color: #ffffff}
+
+    .account-action .btn:hover{
+      background: transparent;
+      color: #ffffff}
+
+    /* NAVIGATION */
+    .nav.navbar-nav li a{
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+    }
+
+    .nav.navbar-nav > li li{
+      border-color: #eeeeee;
+    }
+
+    .navigation-bar{
+      background: #ffffff;
+    }
+
+    .nav.navbar-nav li a{
+      color: #676767;
+    }
+
+    .navbar-toggle,
+    #navigation .nav.navbar-nav li.open > a,
+    #navigation .nav.navbar-nav li > a:hover,
+    #navigation .nav.navbar-nav li > a:focus ,
+    #navigation .nav.navbar-nav li > a:active,
+    #navigation .nav.navbar-nav li.current > a,
+    #navigation .navbar-nav li.current-menu-parent > a,
+    #navigation .navbar-nav li.current-menu-ancestor > a,
+    #navigation .navbar-nav > li.current-menu-item  > a{
+      color: #6ba72b;
+      background: #ffffff;
+    }
+
+    .nav.navbar-nav li li a{
+      color: #676767;
+      background: #ffffff;
+    }
+
+    #navigation .nav.navbar-nav li > a.main-search:hover,
+    #navigation .nav.navbar-nav li > a.main-search:focus,
+    #navigation .nav.navbar-nav li > a.main-search:active{
+      background: transparent;
+    }
+
+    #navigation .nav.navbar-nav li li a:hover,
+    #navigation .nav.navbar-nav li li a:active,
+    #navigation .nav.navbar-nav li li a:focus,
+    #navigation .nav.navbar-nav li.current > a,
+    #navigation .navbar-nav li li.current-menu-parent > a,
+    #navigation .navbar-nav li li.current-menu-ancestor > a,
+    #navigation .navbar-nav li li.current-menu-item  > a{
+      color: #6ba72b;
+      background: #ffffff;
+    }
+
+    /* BODY */
+    body[class*=" "]{
+      background-color: #f5f5f5;
+      background-image: url(  );
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      font-family: "Ubuntu", sans-serif;
+    }
+
+    h1{
+      font-size: 38px;
+      line-height: 1.25;
+    }
+
+    h2{
+      font-size: 32px;
+      line-height: 1.25;
+    }
+
+    h3{
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    h4{
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    h5{
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    h6{
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    /* MAIN COLOR */
+    a, a:hover, a:focus, a:active, a:visited,
+    a.grey:hover,
+    .section-title i,
+    .blog-title:hover h4, .blog-title:hover h5,
+    .next-prev a:hover .fa,
+    .blog-read a, .blog-read a:hover, .blog-read a:active, .blog-read a:visited, .blog-read a:focus, .blog-read a:visited:hover,
+    .fake-thumb-holder .post-format,
+    .comment-reply-link:hover,
+    .category-list .icon,
+    .widget .category-list li:hover .icon,
+    .my-menu li.active a, .my-menu li:hover a,
+    .recipe-actions li:hover, .recipe-actions li:hover a
+    {
+      color: #6ba72b;
+    }
+
+    .user-block-overlay{
+      background: rgba( 107, 167, 43, 0.2 );
+    }
+
+    .link-overlay{
+      background: rgba( 107, 167, 43, 0.8 );
+    }
+
+    .my-menu li.active, .my-menu li:hover,
+    .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
+      background: rgba( 107, 167, 43, 0.06 );
+    }
+
+    .single-recipe:not(.author) .nav-tabs li.active:before{
+      border-color: #6ba72b transparent;
+    }
+
+    blockquote,
+    .widget-title:after,
+    .next-prev a:hover .fa
+    {
+      border-color: #6ba72b;
+    }
+
+    .my-menu li.active, .my-menu li:hover{
+      border-left-color: #6ba72b;
+    }
+
+    table th,
+    .tagcloud a, .btn, a.btn,
+    .rslides_nav,
+    .form-submit #submit,
+    .nav-tabs > li > a:hover,
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus,
+    .panel-default > .panel-heading a:not(.collapsed),
+    .category-list li:hover .icon,
+    .dashboard-item .badge,
+    .ingredients-list li.checked .fake-checkbox,
+    .sticky-wrap,
+    .category-list a:hover .icon,
+    .pagination a,
+    .pagination a:visited,
+    .pagination a:active,
+    .pagination a:focus,
+    .pagination > span
+    {
+      color: #ffffff;
+      background-color: #6ba72b;
+    }
+
+    @media only screen and ( min-width: 768px ){
+      .ingredients-list li:hover .fake-checkbox{
+        color: #ffffff;
+        background-color: #6ba72b;
+      }
+    }
+
+    .tagcloud a:hover, .tagcloud a:focus, .tagcloud a:active,
+    .btn:hover, .btn:focus, .btn:active,
+    .form-submit #submit:hover, .form-submit #submit:focus, .form-submit #submit:active,
+    .pagination a:hover,
+    .pagination > span
+    {
+      color: #ffffff;
+      background-color: #333333;
+    }
+
+    .blog-read a, .blog-read a:hover, .blog-read a:active, .blog-read a:visited, .blog-read a:focus, .blog-read a:visited:hover{
+      background: #ffffff;
+      color: #6ba72b;
+    }
+
+    .copyrights{
+      background: #333333;
+      color: #ffffff;
+    }
+
+    .copyrights-share, .copyrights-share:visited{
+      background: #ffffff;
+      color: #333333;
+    }
+  </style>
+  <link rel='stylesheet' id='recipe-fonts-css'  href='http://fonts.googleapis.com/css?family=Ubuntu%3A400%2C300%2C700%26subset%3Dall%7CLato%3A400%2C300%2C700%26subset%3Dall&amp;ver=1.0.0' type='text/css' media='all' />
+  <script type='text/javascript' src='../../assets/wp-includes/js/jquery/jquery.js'></script>
+  <script type='text/javascript' src='../../assets/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+  <script type='text/javascript'>
+      /* <![CDATA[ */
+      var social_connect_data = {"wordpress_enabled":""};
+      /* ]]> */
+  </script>
+  <script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-jquery-ui-core-720abd0f8f0672c3c4c1fffa58980205.js'></script>
+  <link rel='https://api.w.org/' href='../../assets/wp-json/index.html' />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../assets/wp-includes/wlwmanifest.xml" />
+
+
+
+<section class="search-filter">
+  <div class="container">
+    <form method="get" action="http://demo.djmimi.net/themes/recipe/recipes-search/">
+      <div class="white-block">
+        <div class="content-inner">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="recipe-category">Recipe Category </label>
+                <select name="recipe-category" id="recipe-category" class="form-control">
+                  <option value="">- Select -</option>
+                  <option value="beverages" >Beverages</option><option value="breads" >Breads</option><option value="breakfast" >Breakfast</option><option value="burgers" >Burgers</option><option value="desserts" >Desserts</option><option value="lunch" >Lunch</option><option value="salads" >Salads</option><option value="soups" >Soups</option><option value="vegetarian" >Vegetarian</option>				                </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="recipe-cuisine">Recipe Cuisine </label>
+                <select name="recipe-cuisine" id="recipe-cuisine" class="form-control">
+                  <option value="">- Select -</option>
+                  <option value="asian" >Asian</option><option value="french" >French</option><option value="italian" >Italian</option><option value="mediterranean" >Mediterranean</option><option value="thailand" >Thailand</option>				                </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="sort">Sort Recipes </label>
+                <select name="sort" id="sort" class="form-control">
+                  <option value="">- Select -</option>
+                  <option value="ratings-desc" >Ratings (highest first)</option>
+                  <option value="ratings-asc" >Ratings (lowest first)</option>
+                  <option value="date-desc" >Date (newest first)</option>
+                  <option value="date-asc" >Date (oldest first)</option>
+                  <option value="title-desc" >Title (descending)</option>
+                  <option value="title-asc" >Title (ascending)</option>
+                  <option value="likes-desc" >Likes (most liked first)</option>
+                  <option value="likes-asc" >Likes (most liked last)</option>
+                  <option value="views-desc" >Views (most viewed first)</option>
+                  <option value="views-asc" >Views (most viewed last)</option>
+                  <option value="favourited-desc" >Favourites (most favourited first)</option>
+                  <option value="favourited-asc" >Favourites (most favourited last)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="ingredients">Ingredients </label>
+                <input type="text" name="ingredients" id="ingredients" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="keyword">Keyword </label>
+                <input type="text" name="keyword" id="keyword" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <label>&nbsp;</label>
+              <button type="submit" class="hidden"></button>
+              <a href="javascript:;" class="btn submit-live-form">Search For Recipes</a>
+            </div>
+          </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </form>
   </div>
-</div>
+</section>
 
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let item of pic">
+        <div class="recipe-box white-block">
+        <div class="blog-media">
+          <div class="embed-responsive embed-responsive-16by9">
+            <a mat-button [routerLink]="['/recipedetail', item.recipe.id]">
+              <img width="360" height="203" [src]="imageBlobUrl[item.id] " class="embed-responsive-item wp-post-image"  />
+            </a>
+          </div>
+          <div class="ratings">
+          <span class="bottom-ratings tip" data-title="Average Rate: 4 / 5">
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="top-ratings" style="width: 80%">
+              <span class=" fas fa-star">
+            </span><span class=" fas fa-star"></span>
+              <span class=" fas fa-star"></span>
+              <span class=" fas fa-star"></span>
+              <span class="icon icon_rate"></span>
+            </span></span>
+        </div>
+
+        </div>
+        <div class="content-inner">
+          <a  [routerLink]="['/recipedetail', item.recipe.id]" class="blog-title">
+            <h4> {{item.recipe.title}} </h4>
+          </a>
+
+          <p>About as good as it gets! This is the version of French Onion Soup that people seek when they go to restaurants. Healthy and easy.</p>
+
+          <div class="avatar">
+            <img src="../../assets/wp-content/uploads/2015/02/av_7-25x25.png" width="25" height="25" alt="Nick Slick" class="avatar avatar-25 wp-user-avatar wp-user-avatar-25 alignnone photo" />
+
+            By 			<a href="../author/nick/index.html">
+            Nick Slick
+          </a>
+          </div>
+        </div>
+        <div class="content-footer">
+          <div class="content-inner">
+            <ul class="list-unstyled list-inline recipe-meta clearfix">
+              <li>
+						<span class="tip level advanced" data-title="Difficulty: Advanced">
+		<span class="level-bar-1"></span>
+		<span class="level-bar-2"></span>
+		<span class="level-bar-3"></span>
+	</span>
+              </li>
+              <li class="tip" data-title="Yield">
+                <i class="fas fa-table"></i>
+                4 Bowls					</li>
+
+              <li class="tip" data-title="Servings">
+                <i class="fas fa-users"></i>
+                4 People					</li>
+
+              <li class="tip" data-title="Cook Time">
+                <i class="fas fa-clock-o"></i>
+                5min					</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+  </div>
+    <div class="pagination">
+     </div>
+  </div>
+
+</section>
+<a href="javascript:;" class="to_top btn">
+  <span class="fa fa-angle-up"></span>
+</a>
+
+
+
+<link rel='stylesheet' id='dashicons-css'  href='../../assets/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='social_connect-group-css' href='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-social_connect-809216b616e41ddefca17a6eb0a5ce86.css' type='text/css' media='all' />
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var recipe_data = {"search_lang":"Search for recipes...","not_found_lang":"No matching found...","enable_sticky":"yes","ajaxurl":"http:\/\/demo.djmimi.net\/themes\/recipe\/wp-admin\/admin-ajax.php"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../../assets/wp-content/plugins/bwp-minify/cache/minify-b1-recipe-bootstrap-892f3a8f56350fe618a2f90fe2fad774.js'></script>
