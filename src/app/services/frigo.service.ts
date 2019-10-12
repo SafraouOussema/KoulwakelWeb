@@ -10,7 +10,7 @@ import { TokenStorageService } from '../auth/token-storage.service';
 
 export class FrigoService {
   public API = 'http://41.226.28.96:8090/application';
-  public ingid_API = this.API + '/fridges/userName/';
+  public ingid_API = this.API + '/fridge/userName/';
 
 
   constructor(private token: TokenStorageService ,private http: HttpClient) {
