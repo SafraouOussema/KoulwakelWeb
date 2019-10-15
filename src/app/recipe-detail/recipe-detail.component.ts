@@ -24,7 +24,7 @@ export class RecipeDetailComponent implements OnInit {
   etuds: any=null;
   var:number=0;
 
-
+  ings: any=null;
 
   ngOnInit() {
     this.loadData();
@@ -40,7 +40,10 @@ export class RecipeDetailComponent implements OnInit {
         this.gcs = data;
         console.log(this.gcs);
       });
-
+        this.recipeService.getingreid(id).subscribe(data =>{
+        this.ings =data;
+        console.log(this.ings);
+        });
       this.recipeService.getstepid(id).subscribe(data => {
         this.steps = data;
 

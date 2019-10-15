@@ -10,6 +10,7 @@ export class RecipeService {
   public API = 'http://41.226.28.96:8090/application';
   public ingid_API = this.API + '/recipes/';
 
+  public ingre = this.API +'/recipeIngredients/';
   public step_API = this.API +'/Step/recipeid/';
   public instruction_API = this.API+'/instructions/stepid/';
   constructor(private http: HttpClient) {
@@ -37,6 +38,9 @@ export class RecipeService {
     return this.http.get(this.instruction_API+id, { responseType: 'json' });
   }
 
+  getingreid(id:string): Observable<any> {
+    return this.http.get(this.ingre+id, { responseType: 'json' });
+  }
 
 
 }
